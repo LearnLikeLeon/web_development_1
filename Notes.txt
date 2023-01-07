@@ -222,6 +222,27 @@ prevent damage control on the entire project or workflow.
 
         $ git status
 
+    -> if we switch to the 'master' branch we will not be seeing all the changes 
+    done by 'leon-green-background' branch until we merge those changes to the 
+    'master' branch because we have two versions of the project in Git.
+
+    To merge the changes available in 'leon-green-background' branch to the 'master' branch which 
+    is the official branch used to develop the end product of this project, we do :
+
+        -> Swith to the 'master' branch :
+            
+            $ git checkout master
+        
+        -> Inspect the difference between the two branches 'master' branch and 'leon-green-background' branch  :
+
+            $ git diff master..leon-green-background
+
+        -> Let's merge 'leon-green-background' branch into the 'master' branch : 
+
+            $ git merge leon-green-background
+
+
+
 
 
 
