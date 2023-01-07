@@ -153,6 +153,10 @@ staging area :
 
     $ git diff
 
+    -> You can inspect exactly what has changed in a particular file :
+
+    $ git diff { filename or foldername}
+
     NB : Press 'q' on your keyboard to exit the ' diff ' window.
 
 --> let's commit our changes :
@@ -160,4 +164,78 @@ staging area :
     $ git add .
 
     $ git commit -m " Content centered using the style tags "
+
+
+--> To see the list of all the commits performed in this project :
+
+    $ git log
+
+<--------------------------  Git Branching Commands  @ 18:11  ----------------------------------------------------------------->
+
+--> Usually in the industry, a developer will be assigned a single task to develop or implement one functionality of the 
+project. One functionality is equal to one feature which is equivalent to one branch in Git.
+
+In this case, we diverge from the master branch where the end product of the project will be built on. This will 
+allow all people contributing in this project not to mess up with the work done by other colleague and also to 
+prevent damage control on the entire project or workflow.
+
+    -> To create a new branch, we do :
+
+        $ git branch { new-branch-name }
+
+    For example : We need to add a green background to our website 
+
+        $ git branch leon-green-background
+
+    -> To check whether the branch has been created or not :
+
+        $ git branch
+
+    -> To switch from the 'master' branch to 'leon-green-background' branch :
+
+        $ git checkout leon-green-background
+
+    -> From 'leon-green-background' branch, let's add a background color to our project :
+        
+        For background color using the link : https://flatuicolors.com/palette/defo
+
+        /* Let's add some background color using the 'style' tags : */
+
+        body{
+            background-color: #2ecc71;
+            color: white;
+        }
+    
+    -> Let's track our modified files :
+
+        $ git status
+
+        $ git diff
+
+    -> Let's do a snapshoot or commit our work :
+
+        $ git add .
+
+        $ git commit -m " Green Background Added "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
