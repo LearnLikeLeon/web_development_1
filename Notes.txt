@@ -218,7 +218,9 @@ prevent damage control on the entire project or workflow.
 
         $ git commit -m " Green Background Added "
 
+    -> If we do a ' git status ', we should expect a clean working directory :
 
+        $ git status
 
 
 
