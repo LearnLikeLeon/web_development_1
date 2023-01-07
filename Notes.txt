@@ -241,6 +241,166 @@ prevent damage control on the entire project or workflow.
 
             $ git merge leon-green-background
 
+        Notes : Automatic merge will fail if there is a merge conflict during the merge 
+        procedure. This means that the two branches that you would like to merge have 
+        some changes done on the same file. Basically two developers have been working 
+        on the same file at the same time. To resolve the merge conflicts, you will 
+        have to manually accept "the current" or "incoming changes". That's the power
+        of using Git for Version control of your files.
+
+
+
+            Your Code editor (VS Code) will highlight 'HEAD' for the changes done on the 
+            'master' branch or 'current' branch while the 'Incoming' highlight will be 
+            for the changes done on the other branch involved in the merge process.
+
+            Once the merge conflicts are resolved, you will have to manually commit those 
+            changes from the newly created merging branch such as ' master|merging ' :
+
+                $ git add .
+                $ git commit -m " Merge conflicts resolved "
+            
+        --> Once you've done working on a feature or branch, it's always a good practice 
+        to delete or clean up the created branch :
+
+            $ git branch
+
+            $ git branch -d { name of the branch to be deleted }
+
+        --> In case we want to delete a branch regarless the modifications available 
+        on that branch ( Force delete ). In this case we want to delete a branch that has 
+        some commits done on it but haven't been merged to the master branch yet :
+
+            $ git branch -D { name of the branch to be deleted }
+
+        NB : deleting a branch won't delete the commit but will just delete the branch's
+         label or tag name in this project.
+
+        Hint : Use the link below to visualize some basic git concepts through some 
+        graphics ( Video @ 33min:59 sec).
+
+            Link : https://onlywei.github.io/explain-git-with-d3/#commit
+        
+<--------------------------  Git Remote Commands  @ 36:11  ----------------------------------------------------------------->
+
+    --> All the actions we performed before were done from our local computer or local 
+    machine or server ( local repository ). That's why we say, you can use git commands 
+    from your command line or teminal without internet connection. Once you are happy 
+    with your project and you would like to share, collaborate with other developers 
+    around the world; consequently you will need a Remote server that will allow you 
+    to remotely establish a connection between your local repository (local machine) 
+    and the remote repository available in your Remote server (such as GitHub, BitBucket,
+     etc...). Once your remote repository is successfully added using the "git remote add origin " command 
+    and your code editor has been successfully granted access to remotely connect to 
+    your GitHub account with SSH; you can successfully push your work or project available 
+    in your local repository to your Remote repository created in your GitHub account.
+
+    RQ : At this stage, an good internet connection is required because we need a remote 
+    Repository.
+
+    --> Let's go to GitHub, then sign In or sign Up so that we can get access and create 
+    a new repository in the logged in GitHub account. 
+
+        -> If it's your first time using your local computer with GitHub web platform, you need 
+        to set a 'SSH' connection from your computer to your GitHub account.
+
+        -> Go to google and search for " Connecting to GitHub with SSH " :
+            Link : https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+
+            -> Make sure you have Git installed on your computer and you have GitBash 
+            installed as well. A simple installation of Git will automatically make 
+            Gitbash available in your computer.
+
+                To install Git on your computer : https://git-scm.com/downloads
+
+            -> click on ' Generating a new SSH key and adding it to the ssh-agent ' and proceed 
+            with the instructions based on your operating system.
+
+                Link : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+            
+            -> Once you've generated a new SSH key and you have ensured that the 'ssh-agent' is 
+            running. Please add your SSH private key to the ssh-agent :
+
+                $ ssh-add ~/.ssh/id_ed25519
+
+            -> Click on ' Adding a new SSH key to your GitHub account ' :
+                Link : https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
+                -> you can locate the hidden .ssh folder, open the file in your favorite text editor, and copy it to your clipboard.
+
+                    $ cd .ssh
+
+                    $ vim id_ed25519.pub
+
+                Notes : Please copy your key and press " :wq " to exit the editor mode
+
+            -> Finally add the copied SSH key in your GitHub account under 'Settings' as 
+            shown on the webpage ' Adding a new SSH key to your GitHub account ' according to 
+            your operating system.
+
+        --> Let's create a new repository for our project in our GitHub account. Normally we use one repository 
+        for a single project. 
+            -> Navigate to your GitHub account, hit on the 'Repositories' tab
+            -> Hit 'New' button to create a new repository.
+            -> Give it a name, a description while setting it as "public" then hit ' Create repository '.
+
+        Hint : The above procedure is done when you are the one starting the project on your local 
+        or personal computer and later on you've decided to open for more collaboration on 
+        the project with other people or developers.
+
+        --> Once the new repository is created_GitHub automatically provides a set of instructions to follow in
+         order to push your work to the remote repository.
+
+            -> In case you've just created an empty directory for your project using the commad line 
+            after performing " mkdir { foldername } " and " cd { foldername } " commands; you can decide to add 
+            a "README.md" file in the created empty directory and then initialize 
+            Git at this point. In this case, all the commands given under the 
+            section '…or create a new repository on the command line' must be followed. For example :
+                
+                $ echo "# web_development_1" >> README.md
+                $ git init
+                $ git add README.md
+                $ git commit -m "first commit"
+                $ git branch -M main
+                $ git remote add origin git@github.com:LearnLikeLeon/web_development_1.git
+                $ git push -u origin main
+
+            -> In case you've been working on a project on your personal computer and you would like to 
+            push or upload your work into a created remote repository; therefore just follow the commands 
+            given by the section '…or push an existing repository from the command line' :
+
+                $ git remote add origin git@github.com:LearnLikeLeon/web_development_1.git
+
+                -> To verify that you have a Git Remote Server available :
+
+                    $ git remote -v
+
+                -> To push our work from the local repository to the remote repository, we use the 
+                'git push' command. By default on Git, the name of my remote server is 'origin'. That's why 
+                we push a given branch to the remote server 'origin' using the general command :
+
+                    $ git push {name of the remote server} {name of the branch to be pushed}
+                or 
+                    $ git push -u {name of the remote server} {name of the branch to be pushed}
+                
+                For example let's push the 'master' branch to the remote repository :
+
+                    $ git push -u origin master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
