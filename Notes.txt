@@ -75,6 +75,21 @@ NB :
 
 --> Navigate to your code editor and create a source code folder in that project with an "index.html" file and save it.
 
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title> </title>
+            <meta charset = "utf-8">
+        </head>
+
+        <body>
+            <h1> Hello and Welcome to Fast version Control with Git.</h1>
+        </body>
+    </html>
+
+
+--> Let's check the modified files :
+
     $ git status 
 
 NB : Git commands can be ran offline ( no internet connection is required) until you decide to add a remote repository 
@@ -105,4 +120,44 @@ RQ : Basically, we say that a commit is a two steps job :
 staging area :
 
     $ git commit -m " A meaningful message about this change "
+
+--> Let's open the created 'index.html' from our command prompt window :
+
+    -> Move to the source code folder 'src' :
+
+        $ cd src
+    
+    -> Open the created 'index.html' file locally in a browser :
+
+        $ start index.html
+    
+--> Let's add some "CSS" style to the webpage using the 'style' tags.
+
+    <!-- Let's add some CSS to make all the content of this webpage centered  -->
+    <style type="text/css">
+        h1{
+            position:absolute;
+            top: 40%;
+            width: 100%;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-size: 100;
+            text-align: center;
+        }
+    </style>
+
+--> Let's check the modified files or the state of my Git Repository :
+
+    $ git status 
+
+--> To visualize the difference between the last commit and the current state of my project :
+
+    $ git diff
+
+    NB : Press 'q' on your keyboard to exit the ' diff ' window.
+
+--> let's commit our changes :
+
+    $ git add .
+
+    $ git commit -m " Content centered using the style tags "
 
