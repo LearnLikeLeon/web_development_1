@@ -1,0 +1,108 @@
+--> Debuter avec Git et GitHub :
+
+     Link : https://www.youtube.com/watch?v=V6Zo68uQPqE
+
+--> Git fast version control Book : https://git-scm.com/book/en/v2
+
+--> Installing Git Command Line Interface Tool on a machine :
+
+	Link_1 : https://git-scm.com/downloads
+
+	Link_2 : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+	-> To verify that Git is successfully installed :
+
+		$ git --version
+
+		$ which git
+
+--> After installing Git on your machine, you need to set it up by configuring your username and 
+email address :
+	
+	-> You can view all of your settings and where they are coming from using:
+
+		$ git config --list --show-origin
+
+         or 
+
+		$ git config -l
+
+	-> Configure your identity because every Git Commit uses the provided information :
+
+		$ git config --global user.name " Learn Like Leon "
+
+		$ git config --global user.email " leon@learnlikeleon.com "
+
+      -> To confirm your credentials or identity :
+
+		$ git config user.name
+
+		$ git config user.email
+
+
+
+<--------------------------  Git Basic Commands ----------------------------------------------------------------->
+
+--> Let's create a folder or a directory or a new project in our local machine or computer :
+
+	$ mkdir {application_name}
+
+--> Let's move in the created directory :
+
+	$ cd {application_name}
+
+--> Let's open the created empty directory with VS Code :
+
+	$ code .
+
+--> To start tracking all the changes done on the created directory from the moment we type 
+the ' git init ' command till the end of the project :
+
+	-> Let's initialize Git in this created empty directory ( this will tell Git to start versioning ) 
+so that we can start working with Git command line tools on this project  :
+
+		$ git init
+
+NB : 
+
+	- Git c'est l'outil en ligne de commande pour versioner nos fichiers.
+
+	- GitHub c'est une application web qui va nous aider à partager notre code.
+
+--> Git can tell you if your folder has some modified files :
+
+	$ git status
+
+--> Navigate to your code editor and create a source code folder in that project with an "index.html" file and save it.
+
+    $ git status 
+
+NB : Git commands can be ran offline ( no internet connection is required) until you decide to add a remote repository 
+where your code will be pushed in order for other people to interact with create remote repository.
+
+--> To start tracking all changes done on a particular file(s) or all the files available in our project, we do :
+
+    $ git add {filename.extension}
+
+or 
+
+    $ git add .
+
+then we commit all the staged changes :
+
+    $ git commit -m " A meaningful message about this change "
+
+
+RQ : Basically, we say that a commit is a two steps job :
+
+# We select which modified file to add to the commit ( Staging modified files ) :
+
+    $ git add {filename_1.extension}
+
+    $ git add {filename_2.extension}
+
+# we take a snapshot ( a photograph of your work performed locally that has been staged ) of what is in the 
+staging area :
+
+    $ git commit -m " A meaningful message about this change "
+
