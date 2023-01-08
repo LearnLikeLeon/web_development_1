@@ -388,6 +388,95 @@ prevent damage control on the entire project or workflow.
 
                     $ git push -u origin master
 
+RQ: Once you've successfully pushed your code to the newly created repository; you will 
+no longer be able to view or see the sequence of steps known as instructions to 
+follow in order for you to either '…or create a new repository on the command line' or 
+'…or push an existing repository from the command line'. Those two sections will be forever 
+gone (Video @ 39min).
+
+<--------------------------  Git Pull Commands  @ 41:05  ----------------------------------------------------------------->
+
+--> To collect the code pushed in a remote repository by other developers, we need to use a " git pull " command.
+
+    -> The General syntax will look like :
+
+        $ git pull {name of the remote server} {name of the branch to be pulled}
+
+    For example, let assume that the default name of the remote repository is ' origin ' and the branch where we 
+    want to pull the code from is the 'master' branch ( because we always pull from the master ) :
+
+        $ git pull origin master
+
+RQ: The ' git pull ' command will collect all the commits done by other developers on a given branch such as the 
+' master ' branch. To collect the code changes performed by a particular developer different than the master branch; 
+we will use the ' git fetch ' command.
+
+NB : Anybody who has a GitHub account can easily access a public repository available in someone else 
+GitHub account. Two elements are needed here :
+
+    1- The GitHub account user's ID such as : lewagon
+    2- The name of the public repository we would like to access such as : surfcamp
+
+    Therefore the GitHub link will be : https://github.com/lewagon/surfcamp
+
+    Another opensource repository could be : https://github.com/rails/rails
+
+    -> Python Projects for Beginners with Source Code could be found using the link below :
+
+        Link : https://www.guru99.com/python-projects-for-beginners.html
+
+    
+        An Email Slicer is the easiest but most popular Python project that will have a lot of use in the future. 
+    This Python project requires users to generate a program to retrieve the username and domain of an email. 
+    You can customize the application and send a message to the host with this information.
+
+        Source Code Link: https://github.com/Cybercharm/Email-Slicer-with-Python
+
+    -> A list of awesome beginners-friendly projects : https://github.com/MunGell/awesome-for-beginners
+
+
+--> Pull Requests ( Team workflow ) : Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. 
+Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your 
+changes are merged into the base branch.
+
+    Link : https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
+
+--> Creating a pull request :  Create a pull request to propose and collaborate on changes to a repository. These changes are proposed in a branch, which ensures
+ that the default branch only contains finished and approved work.
+
+    Link : https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+
+
+--> ' git pull ' command will firstly fetch the stated branch and then merge and commit it to your branch.
+
+--> ' git fetch ' command will just pull the changes of the stated branch without any further commit. This 
+command is mostly use when you just want to step in someone's branch and do some work on his behalf.
+
+RQ: You only ' Fork ' a repository when you don't have the right to collaborate or contribute on the target 
+repository. When you are part of a development team and you have the repository rights to contribute, collaborate 
+on the project; therefore you can just clone the repository instead of forking it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
